@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import './Receitas.css';
 
 function Receitas() {
+  // eslint-disable-next-line no-unused-vars
   const [receitas, setReceitas] = useState([
     { id: 'BolodeCaneca', nome: 'Bolo de Caneca', nivel: 'intermediario', imagem: 'https://via.placeholder.com/200' },
     { id: 'CookiesChocolate', nome: 'Cookies de Chocolate', nivel: 'facil', imagem: 'https://via.placeholder.com/200' },
-    { id: 'AveiocaNutri', nome: 'Aveioca - Nutri', nivel: 'facil', imagem: 'https://via.placeholder.com/200' },
+    { id: 'AveiocaNutri', nome: 'Aveioca - Nutri', nivel: 'dificil', imagem: 'https://via.placeholder.com/200' },
     // Adicione mais receitas conforme necessário
   ]);
 
@@ -15,6 +16,10 @@ function Receitas() {
 
   const filtrarReceitas = (nivel) => {
     setFiltro(nivel);
+  };
+
+  const limparFiltro = () => {
+    setFiltro('');
   };
 
   const receitasFiltradas = filtro
@@ -28,9 +33,10 @@ function Receitas() {
 
       <div className="filtro-nivel">
         <span>Filtrar por Nível:</span>
-        <button onClick={() => filtrarReceitas('dificil')}>Difícil</button>
         <button onClick={() => filtrarReceitas('facil')}>Fácil</button>
         <button onClick={() => filtrarReceitas('intermediario')}>Intermediário</button>
+        <button onClick={() => filtrarReceitas('dificil')}>Difícil</button> {/* Adicionando filtro para difícil */}
+        <button onClick={limparFiltro}>Limpar Filtro</button> {/* Botão para limpar filtro */}
       </div>
 
       <div className="receitas-grid">
