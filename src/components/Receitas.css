@@ -1,0 +1,27 @@
+.receitas-container {
+  padding: 20px;
+}
+
+.filtro-nivel {
+  margin-bottom: 20px;
+}
+
+.receitas-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.receita-card {
+  width: 200px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.receita-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

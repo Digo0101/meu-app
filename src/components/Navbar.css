@@ -1,0 +1,56 @@
+/* src/components/Navbar.css */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+.navbar-logo {
+  color: #00b4a7;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links li {
+  position: relative;
+}
+
+.submenu {
+  cursor: pointer;
+  position: relative;
+}
+
+.submenu-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  list-style: none;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+.submenu-dropdown li {
+  padding: 0.5rem 1rem;
+}
+
+.submenu-dropdown li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.submenu-dropdown li a:hover {
+  color: #00b4a7;
+}

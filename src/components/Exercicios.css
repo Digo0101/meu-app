@@ -1,0 +1,45 @@
+/* src/components/Exercicios.css */
+.exercicios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #8cb08c; /* Ajuste a cor de fundo conforme necessário */
+  }
+  
+  .exercise-card {
+    position: relative;
+    background-color: #d9e7d9;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .exercise-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .exercise-info {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .learn-more-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  
+  .learn-more-btn:hover {
+    background-color: #555;
+  }
+  
