@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useRecompensas } from '../context/RecompensasContext';
+
 import './MeuPerfil.css';
 
 function MeuPerfil() {
   const [email, setEmail] = useState('seuemail@exemplo.com');
   const [senha, setSenha] = useState('');
+  const { recompensas } = useRecompensas(); // Obtenha as recompensas do contexto
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handleSenhaChange = (e) => setSenha(e.target.value);
@@ -37,16 +40,28 @@ function MeuPerfil() {
 
       <section className="conquistas">
         <h2>Conquistas da Gamificação</h2>
-        <ul>
-          <li>Selo: 2L de água em um dia</li>
-          <li>Selo: 5 mil passos em um dia</li>
-        </ul>
+        {recompensas.length > 0 ? (
+          <ul>
+            {recompensas.map((recompensa, index) => (
+              <li key={index}>
+                Selo: {recompensa.titulo} - {recompensa.descricao}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Você ainda não conquistou nenhuma recompensa.</p>
+        )}
       </section>
 
       <section className="atividades-feitas">
         <h2>Atividades Realizadas</h2>
-        <p>Caminhada - 30 min</p>
-        <p>Supino - 3 séries de 12 repetições</p>
+        {recompensas.length > 0 ? (
+          recompensas.map((recompensa, index) => (
+            <p key={index}>{recompensa.titulo}</p>
+          ))
+        ) : (
+          <p>Você ainda não registrou atividades.</p>
+        )}
       </section>
 
       <section className="motivacao">
