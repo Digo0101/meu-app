@@ -1,15 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRecompensas } from '../context/RecompensasContext';
-
 import './MeuPerfil.css';
 
 function MeuPerfil() {
   const [email, setEmail] = useState('seuemail@exemplo.com');
   const [senha, setSenha] = useState('');
+  const [atividades, setAtividades] = useState([]);
   const { recompensas } = useRecompensas(); // Obtenha as recompensas do contexto
+
+  // Carrega atividades registradas do localStorage
+  useEffect(() => {
+    const atividadesRegistradas = JSON.parse(localStorage.getItem('atividadesRegistradas')) || [];
+    setAtividades(atividadesRegistradas);
+  }, []);
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handleSenhaChange = (e) => setSenha(e.target.value);
+
+  const handleSaveChanges = () => {
+    // Simula a ação de salvar as alterações no perfil
+    alert('Alterações salvas com sucesso!');
+  };
 
   return (
     <div className="meu-perfil-container">
@@ -38,13 +49,13 @@ function MeuPerfil() {
           <label>Nova Senha:</label>
           <input type="password" value={senha} onChange={handleSenhaChange} />
         </div>
-        <button>Salvar Alterações</button>
+        <button onClick={handleSaveChanges}>Salvar Alterações</button>
       </section>
 
       {/* Conquistas da Gamificação */}
       <section className="conquistas">
         <h2>Conquistas da Gamificação</h2>
-        {recompensas.length > 0 ? (
+        {recompensas && recompensas.length > 0 ? (
           <ul>
             {recompensas.map((recompensa, index) => (
               <li key={index}>
@@ -60,10 +71,12 @@ function MeuPerfil() {
       {/* Atividades Realizadas */}
       <section className="atividades-feitas">
         <h2>Atividades Realizadas</h2>
-        {recompensas.length > 0 ? (
-          recompensas.map((recompensa, index) => (
-            <p key={index}>{recompensa.titulo}</p>
-          ))
+        {atividades.length > 0 ? (
+          <ul>
+            {atividades.map((atividade, index) => (
+              <li key={index}>{atividade.titulo}</li>
+            ))}
+          </ul>
         ) : (
           <p>Você ainda não registrou atividades.</p>
         )}
@@ -85,4 +98,4 @@ function MeuPerfil() {
   );
 }
 
-export default MeuPerfil;
+export default MeuPerfil;

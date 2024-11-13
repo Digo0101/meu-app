@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ListadeExercicios } from './data/exerciciosData'; // Certifique-se de que o caminho está correto
+import { ListadeExercicios } from './data/exerciciosData';
 
 function ExercicioDetalhado() {
-  const { id } = useParams(); // Obtém o ID do exercício da URL
+  const { id } = useParams();
   const navigate = useNavigate();
 
   // Converte o id para um número inteiro para garantir que o acesso ao array esteja correto
   const exercicioId = parseInt(id, 10);
-  
+
   // Pega o exercício correspondente ao id
   const exercicio = ListadeExercicios[exercicioId];
-  
+
   // Sempre chama o hook useState
   const [atividadeRegistrada, setAtividadeRegistrada] = useState(false);
 
@@ -23,7 +23,15 @@ function ExercicioDetalhado() {
   // Função para registrar a atividade
   const registrarAtividade = () => {
     setAtividadeRegistrada(true);
-    // Aqui você pode adicionar o código para registrar a atividade
+
+    // Recupera atividades registradas ou cria uma nova lista
+    const atividadesRegistradas = JSON.parse(localStorage.getItem('atividadesRegistradas')) || [];
+    
+    // Adiciona o exercício à lista de atividades
+    atividadesRegistradas.push(exercicio);
+
+    // Salva a lista atualizada no localStorage
+    localStorage.setItem('atividadesRegistradas', JSON.stringify(atividadesRegistradas));
   };
 
   return (
