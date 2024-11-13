@@ -1,50 +1,64 @@
 /* src/components/Exercicios.css */
+body {
+  background-color: #EDE7F6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
 .exercicios-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajuste automático para colunas */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo com colunas ajustáveis */
   gap: 20px;
-  padding: 20px;
-  background-color: #8cb08c; /* Cor de fundo da tela */
+  padding: 40px;
+  background-color: #F1F8E9; /* Fundo da seção */
 }
 
 .exercise-card {
-  position: relative;
-  background-color: #d9e7d9;
+  background-color: #ffffff;
   border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; /* Alinha itens dentro do cartão */
-  padding: 10px; /* Adiciona um pouco de espaçamento interno */
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.exercise-card:hover {
+  transform: scale(1.03); /* Efeito sutil ao passar o mouse */
 }
 
 .exercise-image {
   width: 100%;
   height: auto;
-  border-bottom: 2px solid #ccc; /* Adiciona uma borda para separar a imagem do texto */
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .exercise-info {
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  width: 100%;
-  padding: 10px;
-  bottom: 0; /* Garantir que o texto fique na parte inferior do cartão */
+  color: #4d4d4d;
+  text-align: center;
+}
+
+.exercise-info h3 {
+  font-size: 1.2em;
+  color: #7cb342;
+  margin: 0 0 10px 0;
 }
 
 .learn-more-btn {
-  background-color: #333;
+  background-color: #7cb342;
   color: #fff;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
-  margin-top: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .learn-more-btn:hover {
-  background-color: #555;
+  background-color: #689f38;
 }

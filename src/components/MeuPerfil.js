@@ -15,16 +15,19 @@ function MeuPerfil() {
     <div className="meu-perfil-container">
       <h1>Meu Perfil</h1>
       
+      {/* Foto de Perfil */}
       <div className="foto-perfil">
         <img src="caminho/para/foto.jpg" alt="Foto do usuário" />
       </div>
 
+      {/* Dados Cadastrados */}
       <section className="informacoes-cadastradas">
         <h2>Dados Cadastrados</h2>
-        <p>Nome: João Silva</p>
-        <p>Email: {email}</p>
+        <p><strong>Nome:</strong> João Silva</p>
+        <p><strong>Email:</strong> {email}</p>
       </section>
 
+      {/* Trocar Dados */}
       <section className="trocar-dados">
         <h2>Trocar Dados</h2>
         <div>
@@ -38,6 +41,7 @@ function MeuPerfil() {
         <button>Salvar Alterações</button>
       </section>
 
+      {/* Conquistas da Gamificação */}
       <section className="conquistas">
         <h2>Conquistas da Gamificação</h2>
         {recompensas.length > 0 ? (
@@ -53,6 +57,7 @@ function MeuPerfil() {
         )}
       </section>
 
+      {/* Atividades Realizadas */}
       <section className="atividades-feitas">
         <h2>Atividades Realizadas</h2>
         {recompensas.length > 0 ? (
@@ -64,11 +69,13 @@ function MeuPerfil() {
         )}
       </section>
 
+      {/* Motivação */}
       <section className="motivacao">
         <h2>Motivação</h2>
         <p>Mantenha-se focado nos seus objetivos! Cada passo conta.</p>
       </section>
 
+      {/* Metas */}
       <section className="metas">
         <h2>Metas</h2>
         <p>Meta de Saúde: 10 mil passos diários</p>
@@ -78,4 +85,4 @@ function MeuPerfil() {
   );
 }
 
-export default MeuPerfil;
+export default MeuPerfil;

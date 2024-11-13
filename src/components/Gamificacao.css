@@ -1,44 +1,72 @@
 /* src/components/Gamificacao.css */
+body {
+  background-color: #F1F8E9;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
 .gamificacao-container {
-    padding: 20px;
-    text-align: center;
-    background-color: #f0f4f8;
-  }
-  
-  .gamificacao-container h2 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
-  .recompensas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .recompensa-card {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .recompensa-imagem {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
-  .recompensa-card h3 {
-    color: #27ae60;
-    margin: 10px 0 5px;
-  }
-  
-  .recompensa-card p {
-    color: #7f8c8d;
-    font-size: 14px;
-  }
-  
+  padding: 40px;
+  text-align: center;
+  background-color: #EDE7F6;
+}
+
+.gamificacao-container h2 {
+  color: #7cb342;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+
+.recompensas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.recompensa-card {
+  background-color: #ffffff;
+  border: 1px solid #d0d4d8;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.recompensa-card:hover {
+  transform: translateY(-5px);
+}
+
+.recompensa-imagem {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.recompensa-card h3 {
+  color: #7cb342;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.recompensa-card p {
+  color: #4d4d4d;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+}
+
+.recompensa-card button {
+  background-color: #7cb342;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.recompensa-card button:hover {
+  background-color: #689f38;
+}

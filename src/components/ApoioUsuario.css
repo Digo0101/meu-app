@@ -1,63 +1,70 @@
+/* src/components/ApoioUsuario.css */
+
 .apoio-usuario-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background-color: #f7f8fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .apoio-usuario-container h1 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
-  .suporte,
-  .perguntas-frequentes,
-  .contato {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-  }
-  
-  .suporte h2,
-  .perguntas-frequentes h2,
-  .contato h2 {
-    color: #2c3e50;
-    margin-bottom: 10px;
-  }
-  
-  .perguntas-frequentes ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .perguntas-frequentes li {
-    margin: 8px 0;
-    padding: 8px;
-    background-color: #eaf1f7;
-    border-radius: 4px;
-  }
-  
-  .contato p {
-    margin-bottom: 10px;
-    color: #34495e;
-  }
-  
-  .contato button {
-    padding: 10px 20px;
-    background-color: #2c3e50;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .contato button:hover {
-    background-color: #34495e;
-  }
-  
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f7f8fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.apoio-usuario-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.suporte,
+.perguntas-frequentes,
+.contato {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.suporte h2,
+.perguntas-frequentes h2,
+.contato h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.perguntas-frequentes ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.perguntas-frequentes li {
+  margin: 8px 0;
+  padding: 8px;
+  background-color: #eaf1f7;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #34495e;
+}
+
+.contato p {
+  margin-bottom: 10px;
+  color: #34495e;
+  font-size: 1rem;
+}
+
+.contato button {
+  padding: 10px 20px;
+  background-color: #2c3e50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.contato button:hover {
+  background-color: #34495e;
+}

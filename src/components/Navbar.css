@@ -1,10 +1,12 @@
 /* src/components/Navbar.css */
 .navbar {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #f0f0f0;
+  position: fixed; /* ou 'sticky' */
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  z-index: 1000
 }
 
 .navbar-logo {
@@ -29,7 +31,7 @@
 }
 
 .submenu-dropdown {
-  position: absolute;
+  position: relative;
   top: 100%;
   left: 0;
   background-color: #ffffff;

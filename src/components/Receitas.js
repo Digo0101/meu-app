@@ -3,12 +3,16 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Receitas.css';
 
+
 function Receitas() {
   // eslint-disable-next-line no-unused-vars
   const [receitas, setReceitas] = useState([
-    { id: 'BolodeCaneca', nome: 'Bolo de Caneca', nivel: 'intermediario', imagem: 'https://via.placeholder.com/200' },
+    { id: 'BolodeCaneca', nome: 'Bolo de Caneca', nivel: 'intermediario',  },
     { id: 'CookiesChocolate', nome: 'Cookies de Chocolate', nivel: 'facil', imagem: 'https://via.placeholder.com/200' },
     { id: 'AveiocaNutri', nome: 'Aveioca - Nutri', nivel: 'dificil', imagem: 'https://via.placeholder.com/200' },
+    {id: 'BolodeBananaCaneca', nome: 'Bolo de Banana na Caneca', nivel: 'facil', imagem: 'https://via.placeholder.com/200'},
+    { id: 'Crepioca', nome: 'Crepioca', nivel: 'facil', magem: 'https://via.placeholder.com/200' },
+
     // Adicione mais receitas conforme necessário
   ]);
 

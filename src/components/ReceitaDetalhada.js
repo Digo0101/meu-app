@@ -30,6 +30,39 @@ const receitasDetalhes = {
       "Passo 3: Recheie com ingredientes de sua escolha."
     ]
   },
+  BolodeBananaCaneca: { 
+    titulo: "Bolo de Banana na Caneca", 
+    
+    passos: [
+      "Ingredientes",
+      "1 BANANA MADURA AMASSADA",
+      "1 COLHER DE CAFÉ DE FERMENTO EM PÓ",
+      " 1 OVO INTEIRO",
+      "10G DE CACAU EM PÓ 100% - OPCIONAL",
+      "10G DE FARELO DE AVEIA",
+      "CANELA EM PÓ A GOSTO - OPCIONAL",
+      "MISTURAR TODOS OS INGREDIENTES E LEVAR AO MICROONDAS POR APROXIMADAMENTE 2 MINUTOS."
+
+    ]
+    
+  },
+
+Crepioca: { 
+    titulo: "Crepioca", 
+    
+    passos: [
+      "Ingredientes",
+      "1 BANANA MADURA AMASSADA",
+      "1 COLHER DE CAFÉ DE FERMENTO EM PÓ",
+      " 1 OVO INTEIRO",
+      "10G DE CACAU EM PÓ 100% - OPCIONAL",
+      "10G DE FARELO DE AVEIA",
+      "CANELA EM PÓ A GOSTO - OPCIONAL",
+      "MISTURAR TODOS OS INGREDIENTES E LEVAR AO MICROONDAS POR APROXIMADAMENTE 2 MINUTOS."
+
+    ]
+    
+  },
   // Adicione mais receitas conforme necessário
 };
 
