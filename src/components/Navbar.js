@@ -7,7 +7,7 @@ function Navbar() {
   const navigate = useNavigate(); // Inicializando o useNavigate
 
   const toggleSubmenu = () => {
-    setSubmenuOpen(!submenuOpen);
+    setSubmenuOpen((prevState) => !prevState);
   };
 
   return (
