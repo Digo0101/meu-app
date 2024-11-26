@@ -5,11 +5,35 @@ import './Login.css';
 function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log('Login realizado');
+
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, senha }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Armazenar o token JWT no localStorage ou contexto global
+        localStorage.setItem('token', data.token);
+        console.log('Login realizado');
+        navigate('/meu-perfil'); // Redireciona para a página de perfil
+      } else {
+        setError(data.message); // Exibe mensagem de erro
+      }
+    } catch (error) {
+      console.error('Erro ao fazer login:', error);
+      setError('Erro ao fazer login');
+    }
   };
 
   return (
@@ -39,6 +63,7 @@ function Login() {
           </div>
           <button type="submit" className="login-btn">Entrar</button>
         </form>
+        {error && <div className="error-message">{error}</div>}
         <button 
           className="link-btn" 
           onClick={() => navigate('/como-trocar-senha')}
