@@ -1,0 +1,28 @@
+/* ComoTrocarSenha.css */
+.como-trocar-senha-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  ol {
+    margin-left: 20px;
+  }
+  
+  section {
+    margin-bottom: 30px;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

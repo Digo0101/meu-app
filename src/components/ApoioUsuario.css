@@ -1,70 +1,104 @@
 /* src/components/ApoioUsuario.css */
 
+/* Container principal */
 .apoio-usuario-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
-  padding: 20px;
-  background-color: #f7f8fa;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  background-color: #f0f4f8; /* Cor de fundo mais suave */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  color: #34495e;
 }
 
 .apoio-usuario-container h1 {
   text-align: center;
   color: #2c3e50;
-  margin-bottom: 20px;
-  font-size: 2rem;
+  margin-bottom: 30px;
+  font-size: 2.5rem; /* Maior e mais destacado */
+  font-weight: 600;
 }
 
 .suporte,
 .perguntas-frequentes,
 .contato {
-  margin-bottom: 20px;
-  padding: 15px;
+  margin-bottom: 25px;
+  padding: 20px;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .suporte h2,
 .perguntas-frequentes h2,
 .contato h2 {
-  color: #2c3e50;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
+  color: #7cb342; /* Verde da tela de login */
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .perguntas-frequentes ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .perguntas-frequentes li {
-  margin: 8px 0;
-  padding: 8px;
-  background-color: #eaf1f7;
-  border-radius: 4px;
+  margin: 10px 0;
+  padding: 12px;
+  background-color: #e8f5e9; /* Cor de fundo suave para as perguntas */
+  border-radius: 6px;
   font-size: 1rem;
   color: #34495e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .contato p {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #34495e;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .contato button {
-  padding: 10px 20px;
-  background-color: #2c3e50;
+  padding: 12px 25px;
+  background-color: #7cb342; /* Verde da tela de login */
   color: #ffffff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s;
+  font-size: 1.1rem;
+  margin-top: 15px;
 }
 
 .contato button:hover {
-  background-color: #34495e;
+  background-color: #689f38; /* Cor mais escura no hover */
+  transform: scale(1.05); /* Efeito de escala para o hover */
+}
+
+.contato button:active {
+  transform: scale(1); /* Efeito de clique */
+}
+
+/* Estilo para o conteúdo de cada seção */
+.suporte ul,
+.perguntas-frequentes ul {
+  margin: 10px 0;
+}
+
+.suporte li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #34495e;
+}
+
+.suporte li:hover {
+  background-color: #e8e8e8;
+  transition: background-color 0.3s;
 }

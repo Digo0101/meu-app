@@ -1,58 +1,108 @@
+/* src/Sobre.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; /* Cor suave para o fundo da página */
+  margin: 0;
+  padding: 0;
+}
+
 .sobre-container {
-    padding: 40px;
-    background-color: #e0f2e9;
-    text-align: center;
-    color: #2c4b3f;
-  }
-  
-  .sobre-header {
-    margin-bottom: 30px;
-  }
-  
-  .logo {
-    width: 150px;
-    margin-bottom: 20px;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    color: #2c4b3f;
-  }
-  
-  h2 {
-    font-size: 2rem;
-    margin-top: 40px;
-    color: #2c4b3f;
-  }
-  
-  .time-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-  }
-  
-  .membro {
-    background-color: #d9f0e1;
+  padding: 40px;
+  background-color: #e0f2e9; /* Fundo suave em tom de verde */
+  text-align: center;
+  color: #2c4b3f;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sobre-header {
+  margin-bottom: 30px;
+}
+
+.sobre-container h1 {
+  font-size: 2.5rem;
+  color: #2c4b3f;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sobre-container p {
+  font-size: 1.2rem;
+  color: #2c4b3f;
+  line-height: 1.6;
+}
+
+.sobre-container h2 {
+  font-size: 2rem;
+  margin-top: 40px;
+  color: #2c4b3f;
+  font-weight: bold;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.time-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap; /* Para permitir que os membros se ajustem responsivamente */
+}
+
+.membro {
+  background-color: #d9f0e1; /* Fundo verde claro para cada membro */
+  padding: 20px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para destaque */
+  transition: transform 0.3s ease; /* Efeito de hover suave */
+}
+
+.membro:hover {
+  transform: translateY(-10px); /* Eleva o membro ao passar o mouse */
+}
+
+.membro img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.membro h3 {
+  margin: 10px 0 5px;
+  color: #2c4b3f;
+  font-size: 1.2rem;
+}
+
+.membro p {
+  color: #2c4b3f;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .sobre-container {
     padding: 20px;
-    border-radius: 8px;
-    width: 200px;
-    text-align: center;
   }
-  
-  .membro img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
+
+  .sobre-container h1 {
+    font-size: 2rem;
   }
-  
+
+  .membro {
+    width: 160px;
+    padding: 15px;
+  }
+
   .membro h3 {
-    margin: 10px 0 5px;
-    color: #2c4b3f;
+    font-size: 1rem;
   }
-  
+
   .membro p {
-    color: #2c4b3f;
-    font-style: italic;
+    font-size: 0.9rem;
   }
-  
+}

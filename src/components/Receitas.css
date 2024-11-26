@@ -1,27 +1,114 @@
+/* src/components/Receitas.css */
 .receitas-container {
   padding: 20px;
+  background-color: #f5f5f5; /* Cor de fundo suave, como na tela de login */
+  margin-top: 80px; /* Distância da navbar fixa */
+}
+
+.receitas-container h1 {
+  color: #00796b; /* Cor verde para o título */
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+
+.receitas-container p {
+  color: #004d40; /* Verde escuro para o texto */
+  font-size: 1em;
 }
 
 .filtro-nivel {
   margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.filtro-nivel span {
+  color: #00796b; /* Verde claro para o rótulo de filtro */
+}
+
+.filtro-nivel button {
+  background-color: #00796b; /* Botões em verde */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filtro-nivel button:hover {
+  background-color: #004d40; /* Cor escura do botão ao passar o mouse */
 }
 
 .receitas-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
 .receita-card {
   width: 200px;
   padding: 10px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   text-align: center;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .receita-card img {
   width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+.receita-info {
+  margin-top: 10px;
+}
+
+.receita-nivel {
+  color: #00796b; /* Cor verde para o nível da receita */
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.receita-card h3 {
+  color: #333333;
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.receita-card a {
+  color: #00796b; /* Cor verde para o link */
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.receita-card a:hover {
+  color: #004d40; /* Cor escura do link ao passar o mouse */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .receitas-container h1 {
+    font-size: 1.8em;
+  }
+
+  .filtro-nivel {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .receitas-grid {
+    grid-template-columns: 1fr 1fr; /* Duas colunas em telas menores */
+  }
+
+  .receita-card {
+    width: 100%;
+    padding: 15px;
+  }
 }

@@ -1,34 +1,38 @@
-/* src/components/Navbar.css */
+/* Resetando margens e padding para garantir consistência */
 body {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-.content {
-  padding-top: 60px; 
-}
+/* Navbar fixa */
 .navbar {
+  position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 60px; /* Defina a altura da navbar */
   display: flex;
-  height: 60px;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  position: fixed; 
-  width: 100%;
   background-color: #f0f0f0;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  z-index: 1000;
+  z-index: 1000; /* Garante que a navbar esteja acima do conteúdo */
+  padding: 0 20px; /* Espaçamento interno da navbar */
 }
 
-.navbar-logo {
-  color: #00b4a7;
-  font-size: 1.5rem;
-  font-weight: bold;
+/* Espaçamento do conteúdo abaixo da navbar */
+.page-content {
+  padding-top: 60px; /* Mesma altura da navbar */
+  margin-top: 0; /* Sem margem adicional */
 }
 
+/* Ajuste no conteúdo das páginas */
+.content {
+  padding-top: 60px; /* Mesma altura da navbar */
+}
+
+/* Navbar Links */
 .navbar-links {
   list-style: none;
   display: flex;
@@ -39,7 +43,6 @@ body {
 .navbar-links li {
   display: inline;
   position: relative;
-  
 }
 
 .submenu {
@@ -48,22 +51,21 @@ body {
 }
 
 .submenu-dropdown {
-  position: relative;
-  top: 100%;
+  position: absolute;
+  top: calc(100% + 5px); /* Espaçamento entre o botão "Mais" e o menu */
   left: 0;
   background-color: #ffffff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   list-style: none;
   padding: 0.5rem 0;
-  display: flex;
+  display: none; /* Oculta por padrão */
   flex-direction: column;
   min-width: 150px;
   z-index: 2000;
 }
 
 .submenu-dropdown li {
- 
   padding: 0.5rem 1rem;
 }
 
@@ -74,8 +76,8 @@ body {
 
 .submenu-dropdown li a:hover {
   color: #00b4a7;
-  display: flex;
 }
-.submenu-dropdown.open {
-  display: flex; 
+
+.submenu:hover .submenu-dropdown {
+  display: flex; /* Exibe o dropdown ao passar o mouse */
 }

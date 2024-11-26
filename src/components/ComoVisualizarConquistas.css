@@ -1,0 +1,15 @@
+.visualizar-conquistas-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .passos ol {
+    margin: 20px 0;
+  }
+  
+  .dica {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 4px solid #28a745;
+  }
+  

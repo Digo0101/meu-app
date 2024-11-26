@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ApoioUsuario.css';
 
 function ApoioUsuario() {
@@ -15,9 +16,15 @@ function ApoioUsuario() {
       <section className="perguntas-frequentes">
         <h2>Perguntas Frequentes</h2>
         <ul>
-          <li>Como trocar minha senha?</li>
-          <li>Como posso atualizar meus dados?</li>
-          <li>Como visualizar minhas conquistas?</li>
+          <li>
+            <Link to="/comotrocarsenha">Como trocar minha senha?</Link>
+          </li>
+          <li>
+            <Link to="/comoatualizardados">Como posso atualizar meus dados?</Link>
+          </li>
+          <li>
+            <Link to="/comovisualizarconquistas">Como visualizar minhas conquistas?</Link>
+          </li>
         </ul>
       </section>
 

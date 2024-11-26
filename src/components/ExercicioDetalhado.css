@@ -4,7 +4,7 @@
   padding: 20px;
   max-width: 900px;
   margin: auto;
-  background-color: #EDE7F6;
+  background-color: #f9f9f9; /* Fundo mais neutro */
   border-radius: 10px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -32,26 +32,54 @@ iframe {
 
 button {
   margin-top: 10px;
-  padding: 12px 24px;
+  padding: 10px 20px; /* Botão menor */
   background-color: #4CAF50;
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 25px; /* Bordas arredondadas */
   font-weight: bold;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
   background-color: #45a049;
+  transform: translateY(-4px); /* Levanta o botão suavemente */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5); /* Foco suave */
 }
 
 button + button {
   margin-left: 15px;
   background-color: #3498db;
+  border-radius: 25px;
 }
 
 button + button:hover {
-  background-color: #2980b9;
+  background-color: #2980b9;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button + button:focus {
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Foco no segundo botão */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  button {
+    padding: 8px 16px;  /* Botões menores em telas menores */
+    font-size: 0.9rem;
+  }
+
+  button + button {
+    margin-top: 10px;
+    margin-left: 0;
+  }
 }

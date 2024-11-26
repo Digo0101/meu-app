@@ -1,18 +1,37 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';  // Importando o useNavigate
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Importando o useNavigate
 import './Navbar.css';
 
 function Navbar() {
   const [submenuOpen, setSubmenuOpen] = useState(false);
+  const submenuRef = useRef(null); // Referência para o submenu
   const navigate = useNavigate(); // Inicializando o useNavigate
 
-  const toggleSubmenu = () => {
-    setSubmenuOpen((prevState) => !prevState);
+  // Função para alternar o submenu
+  const handleMouseEnter = () => {
+    setSubmenuOpen(true);
   };
+
+  const handleMouseLeave = () => {
+    setSubmenuOpen(false);
+  };
+
+  useEffect(() => {
+    if (submenuRef.current) {
+      const rect = submenuRef.current.getBoundingClientRect();
+      if (rect.right > window.innerWidth) {
+        submenuRef.current.style.left = 'auto';
+        submenuRef.current.style.right = '0'; // Reposiciona para evitar sair da tela
+      } else {
+        submenuRef.current.style.left = ''; // Remove ajustes anteriores
+        submenuRef.current.style.right = '';
+      }
+    }
+  }, [submenuOpen]);
 
   return (
     <nav className="navbar">
-      <div className="logo" onClick={() => navigate('/')}> {/* Usando navigate aqui */}
+      <div className="logo" onClick={() => navigate('/')}>
         <h1 className="navbar-logo">VitaSync</h1>
       </div>
       <ul className="navbar-links">
@@ -20,14 +39,14 @@ function Navbar() {
         <li><Link to="/cadastro">Cadastro</Link></li>
         <li><Link to="/sobre">Sobre</Link></li>
         <li><Link to="/apoio-usuario">Apoio ao Usuário</Link></li>
-        <li 
+        <li
           className="submenu"
-          onMouseEnter={toggleSubmenu}
-          onMouseLeave={toggleSubmenu}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
-          <span>Conteúdos</span>
+          <span>Mais</span>
           {submenuOpen && (
-            <ul className="submenu-dropdown">
+            <ul className="submenu-dropdown" ref={submenuRef}>
               <li><Link to="/noticias">Notícias</Link></li>
               <li><Link to="/receitas">Receitas</Link></li>
               <li><Link to="/exercicios">Exercícios</Link></li>

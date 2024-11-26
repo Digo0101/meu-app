@@ -14,6 +14,10 @@ import ApoioUsuario from './components/ApoioUsuario';
 import ReceitaDetalhada from './components/ReceitaDetalhada';
 import ExercicioDetalhado from './components/ExercicioDetalhado';
 import Home from './components/Home'
+import ComoTrocarSenha from './components/ComoTrocarSenha';
+import TrocarSenha from './components/TrocarSenha';
+import ComoAtualizarDados from './components/ComoAtualizarDados';
+import ComoVisualizarConquistas from './components/ComoVisualizarConquistas';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { RecompensasProvider } from './context/RecompensasContext';
 
@@ -38,6 +42,10 @@ function App() {
             <Route path="/receitas" element={<Receitas />} />
             <Route path="/receitas/:id" element={<ReceitaDetalhada />} />
             <Route path="/exercicio/:id" element={<ExercicioDetalhado/>}/>
+            <Route path="/como-trocar-senha" element={<ComoTrocarSenha />} /> {}
+            <Route  path="/trocar-senha" element={<TrocarSenha />} />
+            <Route path="/comoatualizardados" element={<ComoAtualizarDados />} />
+            <Route path="/comovisualizarconquistas" element={<ComoVisualizarConquistas />} />
           </Routes>
         </div>
       </Router>

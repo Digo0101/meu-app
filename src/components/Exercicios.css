@@ -1,6 +1,7 @@
 /* src/components/Exercicios.css */
+
 body {
-  background-color: #EDE7F6;
+  background-color: #EDE7F6;  /* Manteve o fundo claro para uma boa leitura */
   font-family: Arial, sans-serif;
   margin: 0;
 }
@@ -10,7 +11,8 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo com colunas ajustáveis */
   gap: 20px;
   padding: 40px;
-  background-color: #F1F8E9; /* Fundo da seção */
+  background-color: #F5F5F5; /* Mudando para um tom mais neutro */
+  border-radius: 10px;  /* Bordas suaves */
 }
 
 .exercise-card {
@@ -51,14 +53,17 @@ body {
 .learn-more-btn {
   background-color: #7cb342;
   color: #fff;
-  padding: 10px 20px;
+  padding: 8px 16px; /* Botão menor */
   border: none;
-  border-radius: 6px;
+  border-radius: 25px;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  font-size: 0.9rem;  /* Tamanho mais adequado */
 }
 
 .learn-more-btn:hover {
-  background-color: #689f38;
+  background-color: #689f38;
+  transform: translateY(-4px); /* Levanta um pouco mais o botão ao passar o mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombreamento mais suave */
 }

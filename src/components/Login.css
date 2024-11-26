@@ -1,108 +1,101 @@
-/* src/components/MeuPerfil.css */
+/* Login.css */
 
-.meu-perfil-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 30px;
-  background-color: #EDE7F6;
-  border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.meu-perfil-container h1 {
-  text-align: center;
-  color: #7cb342;
-  margin-bottom: 25px;
-  font-size: 2rem;
-}
-
-.foto-perfil {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.foto-perfil img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #7cb342;
-}
-
-.informacoes-cadastradas,
-.trocar-dados,
-.conquistas,
-.atividades-feitas,
-.motivacao,
-.metas {
-  margin-bottom: 25px;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-}
-
-.informacoes-cadastradas h2,
-.trocar-dados h2,
-.conquistas h2,
-.atividades-feitas h2,
-.motivacao h2,
-.metas h2 {
-  color: #7cb342;
-  margin-bottom: 12px;
-  font-size: 1.5rem;
-}
-
-.trocar-dados label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 6px;
-  color: #333;
-}
-
-.trocar-dados input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-}
-
-.trocar-dados button {
-  padding: 12px 24px;
-  background-color: #7cb342;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: bold;
-}
-
-.trocar-dados button:hover {
-  background-color: #5e8b2a;
-}
-
-.conquistas ul {
-  list-style-type: none;
+/* Garantir que o fundo da tela cubra toda a área */
+body {
+  margin: 0;
   padding: 0;
+  font-family: 'Arial', sans-serif;
 }
 
-.conquistas li {
-  margin: 6px 0;
-  padding: 8px;
-  background-color: #f1f8e9;
-  border-radius: 5px;
+/* A classe abaixo garante que a tela seja preenchida com o fundo */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5; /* Fundo claro suave */
+}
+
+/* Estilização do formulário de login */
+.login-form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.login-form:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  color: #00796b; /* Cor de título, mais próxima ao tom da navbar */
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
   color: #333;
-}
-
-.motivacao p,
-.metas p {
-  color: #34495e;
-  font-style: italic;
   font-size: 1rem;
 }
 
-.metas {
-  background-color: #f1f8e9;
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: #00796b;
+  outline: none;
+}
+
+button {
+  padding: 12px 25px;
+  width: 100%;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #00796b;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #004d40;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #00796b;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+  transition: color 0.3s ease;
+}
+
+.link-btn:hover {
+  color: #004d40;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .login-form {
+    width: 90%;
+  }
 }

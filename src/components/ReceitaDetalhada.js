@@ -6,6 +6,7 @@ import './ReceitaDetalhada.css';
 const receitasDetalhes = {
   BolodeCaneca: { 
     titulo: "Bolo de Caneca", 
+    imagem: "https://via.placeholder.com/400x300?text=Bolo+de+Caneca", // URL da imagem
     passos: [
       "Passo 1: Pré-aqueça o forno a 180°C.",
       "Passo 2: Misture a farinha, açúcar e lavanda em uma tigela.",
@@ -15,6 +16,7 @@ const receitasDetalhes = {
   },
   CookiesChocolate: { 
     titulo: "Cookies de Chocolate", 
+    imagem: "https://via.placeholder.com/400x300?text=Cookies+de+Chocolate", // URL da imagem
     passos: [
       "Passo 1: Pré-aqueça o forno a 180°C.",
       "Passo 2: Misture a farinha, açúcar e chocolate em uma tigela.",
@@ -24,6 +26,7 @@ const receitasDetalhes = {
   },
   AveiocaNutri: { 
     titulo: "Aveioca - Nutri", 
+    imagem: "https://via.placeholder.com/400x300?text=Aveioca+Nutri", // URL da imagem
     passos: [
       "Passo 1: Misture a aveia com água até formar uma massa.",
       "Passo 2: Coloque na frigideira antiaderente e asse dos dois lados.",
@@ -32,36 +35,31 @@ const receitasDetalhes = {
   },
   BolodeBananaCaneca: { 
     titulo: "Bolo de Banana na Caneca", 
-    
+    imagem: "https://via.placeholder.com/400x300?text=Bolo+de+Banana", // URL da imagem
     passos: [
       "Ingredientes",
       "1 BANANA MADURA AMASSADA",
       "1 COLHER DE CAFÉ DE FERMENTO EM PÓ",
-      " 1 OVO INTEIRO",
+      "1 OVO INTEIRO",
       "10G DE CACAU EM PÓ 100% - OPCIONAL",
       "10G DE FARELO DE AVEIA",
       "CANELA EM PÓ A GOSTO - OPCIONAL",
       "MISTURAR TODOS OS INGREDIENTES E LEVAR AO MICROONDAS POR APROXIMADAMENTE 2 MINUTOS."
-
     ]
-    
   },
-
-Crepioca: { 
+  Crepioca: { 
     titulo: "Crepioca", 
-    
+    imagem: "https://via.placeholder.com/400x300?text=Crepioca", // URL da imagem
     passos: [
       "Ingredientes",
       "1 BANANA MADURA AMASSADA",
       "1 COLHER DE CAFÉ DE FERMENTO EM PÓ",
-      " 1 OVO INTEIRO",
+      "1 OVO INTEIRO",
       "10G DE CACAU EM PÓ 100% - OPCIONAL",
       "10G DE FARELO DE AVEIA",
       "CANELA EM PÓ A GOSTO - OPCIONAL",
       "MISTURAR TODOS OS INGREDIENTES E LEVAR AO MICROONDAS POR APROXIMADAMENTE 2 MINUTOS."
-
     ]
-    
   },
   // Adicione mais receitas conforme necessário
 };
@@ -77,6 +75,7 @@ function ReceitaDetalhada() {
   return (
     <div className="receita-detalhada">
       <h2>{receita.titulo}</h2>
+      <img src={receita.imagem} alt={receita.titulo} className="receita-imagem" />
       <ul>
         {receita.passos.map((passo, index) => (
           <li key={index}>{passo}</li>

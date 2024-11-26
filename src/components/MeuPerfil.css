@@ -50,7 +50,7 @@
 .metas h2 {
   color: #7cb342;
   margin-bottom: 12px;
-  font-size: 1.5rem;
+  font-size: 1.4rem; /* Ajuste para manter as seções organizadas */
 }
 
 .informacoes-cadastradas p,
@@ -85,12 +85,14 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   font-weight: bold;
+  font-size: 1rem; /* Ajustei para não ficar tão grande */
 }
 
 .trocar-dados button:hover {
   background-color: #5e8b2a;
+  transform: translateY(-3px); /* Efeito sutil no hover */
 }
 
 .conquistas ul {
@@ -114,5 +116,35 @@
 }
 
 .metas {
-  background-color: #f1f8e9;
+  background-color: #f1f8e9;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .meu-perfil-container {
+    padding: 20px; /* Menos padding em telas menores */
+  }
+
+  .foto-perfil img {
+    width: 100px; /* Ajustando o tamanho da imagem em telas menores */
+    height: 100px;
+  }
+
+  .meu-perfil-container h1 {
+    font-size: 1.8rem; /* Menor título em telas pequenas */
+  }
+
+  .informacoes-cadastradas h2,
+  .trocar-dados h2,
+  .conquistas h2,
+  .atividades-feitas h2,
+  .motivacao h2,
+  .metas h2 {
+    font-size: 1.2rem; /* Ajustando o tamanho do título das seções */
+  }
+
+  .trocar-dados button {
+    width: 100%; /* Botão ocupa toda a largura em telas pequenas */
+    padding: 10px;
+  }
 }
