@@ -1,38 +1,37 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import supabase from '../supabaseClient'; // Importe o cliente do Supabase
 import './Login.css';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
 
     try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, senha }),
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password: senha,
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        // Armazenar o token JWT no localStorage ou contexto global
-        localStorage.setItem('token', data.token);
-        console.log('Login realizado');
-        navigate('/meu-perfil'); // Redireciona para a página de perfil
-      } else {
-        setError(data.message); // Exibe mensagem de erro
+      if (error) {
+        throw error;
       }
+
+      console.log('Login realizado com sucesso:', data);
+      navigate('/meu-perfil'); // Redirecione para a página do perfil
     } catch (error) {
-      console.error('Erro ao fazer login:', error);
-      setError('Erro ao fazer login');
+      console.error('Erro no login:', error.message);
+      setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -40,6 +39,7 @@ function Login() {
     <div className="login-container">
       <div className="login-form">
         <h1>Login</h1>
+        {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleLogin}>
           <div className="input-group">
             <label>Email:</label>
@@ -61,15 +61,10 @@ function Login() {
               required 
             />
           </div>
-          <button type="submit" className="login-btn">Entrar</button>
+          <button type="submit" className="login-btn" disabled={loading}>
+            {loading ? 'Entrando...' : 'Entrar'}
+          </button>
         </form>
-        {error && <div className="error-message">{error}</div>}
-        <button 
-          className="link-btn" 
-          onClick={() => navigate('/como-trocar-senha')}
-        >
-          Trocar Senha
-        </button>
       </div>
     </div>
   );

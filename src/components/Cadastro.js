@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import './Cadastro.css'; // Importa o CSS do Cadastro
+import { useNavigate } from 'react-router-dom';
+import supabase from '../supabaseClient'; // Importe o cliente do Supabase
+import './Cadastro.css';
 
 function Cadastro() {
   const [formData, setFormData] = useState({
@@ -11,10 +13,12 @@ function Cadastro() {
     autenticacaoEmail: false,
     sexo: '',
     condicoesMedicas: '',
-    objetivos: ''
+    objetivos: '',
   });
 
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const validateForm = () => {
     const newErrors = {};
@@ -26,7 +30,7 @@ function Cadastro() {
     if (formData.senha !== formData.confirmarSenha)
       newErrors.confirmarSenha = 'As senhas não coincidem';
     if (!formData.sexo) newErrors.sexo = 'Sexo é obrigatório';
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -35,28 +39,68 @@ function Cadastro() {
     const { name, value, type, checked } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Aqui você pode adicionar a lógica para enviar os dados do formulário para o backend
-      console.log(formData);
-      // Limpa os campos após o envio
-      setFormData({
-        nome: '',
-        email: '',
-        confirmarEmail: '',
-        senha: '',
-        confirmarSenha: '',
-        autenticacaoEmail: false,
-        sexo: '',
-        condicoesMedicas: '',
-        objetivos: ''
-      });
+      setLoading(true);
+      try {
+        // Inserção do usuário na tabela de users
+        const { error: insertError } = await supabase
+          .from('users') // Nome da tabela no Supabase
+          .insert([{
+            nome: formData.nome,
+            email: formData.email,
+            senha: formData.senha, // Lembre-se de usar hash de senha no backend!
+            sexo: formData.sexo,
+            condicoes_medicas: formData.condicoesMedicas,
+            objetivos: formData.objetivos,
+            autenticacao_email: formData.autenticacaoEmail,
+          }]);
+
+        if (insertError) {
+          console.error('Erro ao cadastrar:', insertError);
+          alert('Ocorreu um erro ao realizar o cadastro. Tente novamente.');
+        } else {
+          console.log('Cadastro realizado com sucesso');
+          
+          // Realizar login após cadastro
+          const { data, error } = await supabase.auth.signInWithPassword({
+            email: formData.email,
+            password: formData.senha,
+          });
+
+          if (error) {
+            console.error('Erro ao fazer login:', error);
+            alert('Erro ao fazer login: ' + error.message);
+          } else {
+            console.log('Login realizado com sucesso:', data);
+            navigate('/meu-perfil'); // Redireciona para a página do perfil
+          }
+
+          // Limpar o formulário após sucesso
+          setFormData({
+            nome: '',
+            email: '',
+            confirmarEmail: '',
+            senha: '',
+            confirmarSenha: '',
+            autenticacaoEmail: false,
+            sexo: '',
+            condicoesMedicas: '',
+            objetivos: '',
+          });
+        }
+      } catch (err) {
+        console.error('Erro inesperado:', err);
+        alert('Erro inesperado. Tente novamente mais tarde.');
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -169,7 +213,9 @@ function Cadastro() {
           />
         </div>
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Cadastrando...' : 'Cadastrar'}
+        </button>
       </form>
     </div>
   );

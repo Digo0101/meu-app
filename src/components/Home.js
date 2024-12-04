@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="home-container">
       <section className="home-section">
-        <img src="/path/to/sono.jpg" alt="Sono Revitalizante" className="home-image" />
+        <img src="/images/acordar.jpg" alt="Sono Revitalizante" className="home-image" />
         <h2>Durma Melhor, Viva Melhor: A Ciência por Trás de um Sono Revitalizante</h2>
         <p>Você sabia que o sono é o segredo para uma vida saudável?</p>
         <p>Um descanso de qualidade é essencial para o bom funcionamento do corpo e da mente. Durante o sono, o corpo se recupera, a memória se fortalece e a energia para o dia seguinte é renovada. Estudos mostram que uma boa noite de sono melhora a concentração, fortalece o sistema imunológico e até ajuda na prevenção de doenças crônicas como diabetes e hipertensão.</p>
@@ -18,7 +18,7 @@ function Home() {
       </section>
 
       <section className="home-section">
-        <img src="/path/to/alimentacao.jpg" alt="Alimentação Saudável" className="home-image" />
+        <img src="/images/alimenta.jpg" alt="Alimentação Saudável" className="home-image" />
         <h2>Alimentação Saudável: O Combustível que Seu Corpo Precisa para Viver Plenamente</h2>
         <p>Você é o que você come!</p>
         <p>A qualidade da sua alimentação impacta diretamente na sua saúde e bem-estar. Comer de forma balanceada não significa seguir dietas restritivas ou fazer sacrifícios, mas sim aprender a fazer escolhas conscientes. Frutas, vegetais, grãos integrais e proteínas magras são a base de uma alimentação nutritiva que mantém o corpo funcionando em seu melhor desempenho.</p>
@@ -37,7 +37,7 @@ function Home() {
       </section>
 
       <section className="home-section">
-        <img src="/path/to/exercicio.jpg" alt="Exercícios Físicos" className="home-image" />
+        <img src="/images/exer.jpg" alt="Exercícios Físicos" className="home-image" />
         <h2>Exercícios Físicos: O Poder do Movimento para uma Vida Saudável e Ativa</h2>
         <p>A chave para uma vida longa e saudável está no movimento!</p>
         <p>A prática regular de exercícios não só melhora a saúde física, mas também é uma poderosa aliada da saúde mental. Além de fortalecer o coração e os músculos, os exercícios ajudam a controlar o peso, diminuem o estresse e aumentam os níveis de felicidade devido à liberação de endorfina, o famoso "hormônio da felicidade".</p>

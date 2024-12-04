@@ -1,12 +1,10 @@
 import React from 'react';
 import './Sobre.css';
 
-
 function Sobre() {
   return (
     <div className="sobre-container">
       <div className="sobre-header">
-       
         <h1>Sobre o Vitasync</h1>
         <p>
           O Vitasync é um projeto dedicado a trazer saúde e conforto aos nossos usuários, com uma equipe dedicada e motivada para oferecer o melhor em tecnologia e bem-estar. 
@@ -18,19 +16,29 @@ function Sobre() {
       
       <div className="time-container">
         <div className="membro">
-          <img src="https://via.placeholder.com/150" alt="Rodrigo Martínez" />
+          <img src="/images/ro.jpg" alt="Rodrigo Martínez" />
           <h3>Rodrigo Martínez</h3>
-          <p>Art Director</p>
+          <p>Desenvolvedor Full Stack</p>
         </div>
         <div className="membro">
-          <img src="https://via.placeholder.com/150" alt="Lucas Vilas" />
+          <img src="/images/lucas.jpg" alt="Lucas Vilas" />
           <h3>Lucas Vilas</h3>
-          <p>Tech Lead</p>
+          <p>Desenvolvedor Full Stack</p>
         </div>
         <div className="membro">
-          <img src="https://via.placeholder.com/150" alt="Murilo Enrico" />
+          <img src="/images/mu.jpg" alt="Murilo Enrico" />
           <h3>Murilo Enrico</h3>
-          <p>Product Manager</p>
+          <p>Front End e Designer</p>
+        </div>
+        <div className="membro">
+          <img src="/images/geo.jpg" alt="Giovani Monteiro" />
+          <h3>Giovani Monteiro</h3>
+          <p>Banco de Dados</p>
+        </div>
+        <div className="membro">
+          <img src="/images/jm.jpg" alt="João Murari" />
+          <h3>João Murari</h3>
+          <p>Banco de Dados</p>
         </div>
       </div>
     </div>

@@ -58,8 +58,13 @@ function MeuPerfil() {
         {recompensas && recompensas.length > 0 ? (
           <ul>
             {recompensas.map((recompensa, index) => (
-              <li key={index}>
-                Selo: {recompensa.titulo} - {recompensa.descricao}
+              <li key={index} className="recompensa-item">
+                <div className="recompensa-imagem">
+                  <img src={recompensa.imagem} alt={recompensa.titulo} />
+                </div>
+                <div className="recompensa-info">
+                  <strong>Selo:</strong> {recompensa.titulo} - {recompensa.descricao}
+                </div>
               </li>
             ))}
           </ul>

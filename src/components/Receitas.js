@@ -7,11 +7,11 @@ import './Receitas.css';
 function Receitas() {
   // eslint-disable-next-line no-unused-vars
   const [receitas, setReceitas] = useState([
-    { id: 'BolodeCaneca', nome: 'Bolo de Caneca', nivel: 'intermediario',  },
-    { id: 'CookiesChocolate', nome: 'Cookies de Chocolate', nivel: 'facil', imagem: 'https://via.placeholder.com/200' },
-    { id: 'AveiocaNutri', nome: 'Aveioca - Nutri', nivel: 'dificil', imagem: 'https://via.placeholder.com/200' },
-    {id: 'BolodeBananaCaneca', nome: 'Bolo de Banana na Caneca', nivel: 'facil', imagem: 'https://via.placeholder.com/200'},
-    { id: 'Crepioca', nome: 'Crepioca', nivel: 'facil', magem: 'https://via.placeholder.com/200' },
+    { id: 'BolodeCaneca', nome: 'Bolo de Caneca', nivel: 'intermediario', imagem: '/images/boloCaneca.jpg' },
+    { id: 'CookiesChocolate', nome: 'Cookies de Chocolate', nivel: 'facil', imagem: '/images/cokies.jpg' },
+    { id: 'AveiocaNutri', nome: 'Aveioca - Nutri', nivel: 'dificil', imagem: '/images/aveioca.jpg' },
+    {id: 'BolodeBananaCaneca', nome: 'Bolo de Banana na Caneca', nivel: 'facil', imagem: '/images/boloBanana.jpg'},
+    { id: 'Crepioca', nome: 'Crepioca', nivel: 'facil', imagem: '/images/cre.avif' },
 
     // Adicione mais receitas conforme necessário
   ]);

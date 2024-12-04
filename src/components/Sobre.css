@@ -1,14 +1,6 @@
-/* src/Sobre.css */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5; /* Cor suave para o fundo da página */
-  margin: 0;
-  padding: 0;
-}
-
 .sobre-container {
   padding: 40px;
-  background-color: #e0f2e9; /* Fundo suave em tom de verde */
+  background-color: #e0f2e9;
   text-align: center;
   color: #2c4b3f;
   width: 100%;
@@ -39,31 +31,26 @@ body {
   font-weight: bold;
 }
 
-.logo {
-  width: 150px;
-  margin-bottom: 20px;
-}
-
 .time-container {
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Para permitir que os membros se ajustem em diferentes linhas se não couberem em uma única linha */
+  gap: 20px; /* Espaçamento entre os membros */
   margin-top: 40px;
-  flex-wrap: wrap; /* Para permitir que os membros se ajustem responsivamente */
 }
 
 .membro {
-  background-color: #d9f0e1; /* Fundo verde claro para cada membro */
+  background-color: #d9f0e1;
   padding: 20px;
   border-radius: 8px;
   width: 200px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para destaque */
-  transition: transform 0.3s ease; /* Efeito de hover suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .membro:hover {
-  transform: translateY(-10px); /* Eleva o membro ao passar o mouse */
+  transform: translateY(-10px);
 }
 
 .membro img {

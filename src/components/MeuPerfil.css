@@ -50,7 +50,7 @@
 .metas h2 {
   color: #7cb342;
   margin-bottom: 12px;
-  font-size: 1.4rem; /* Ajuste para manter as seções organizadas */
+  font-size: 1.4rem;
 }
 
 .informacoes-cadastradas p,
@@ -87,12 +87,12 @@
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   font-weight: bold;
-  font-size: 1rem; /* Ajustei para não ficar tão grande */
+  font-size: 1rem;
 }
 
 .trocar-dados button:hover {
   background-color: #5e8b2a;
-  transform: translateY(-3px); /* Efeito sutil no hover */
+  transform: translateY(-3px);
 }
 
 .conquistas ul {
@@ -106,6 +106,22 @@
   background-color: #f1f8e9;
   border-radius: 5px;
   color: #333;
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Espaçamento entre a imagem e o texto */
+}
+
+.recompensa-imagem {
+  width: 50px; /* Ajuste o tamanho da imagem */
+  height: 50px;
+  border-radius: 50%; /* Torna a imagem redonda */
+  overflow: hidden; /* Para cortar a imagem se for maior do que o container */
+}
+
+.recompensa-imagem img {
+  width: 100%; /* Faz a imagem preencher o container */
+  height: 100%;
+  object-fit: cover; /* Mantém a proporção da imagem */
 }
 
 .motivacao p,
@@ -122,16 +138,16 @@
 /* Responsividade */
 @media (max-width: 768px) {
   .meu-perfil-container {
-    padding: 20px; /* Menos padding em telas menores */
+    padding: 20px;
   }
 
   .foto-perfil img {
-    width: 100px; /* Ajustando o tamanho da imagem em telas menores */
+    width: 100px;
     height: 100px;
   }
 
   .meu-perfil-container h1 {
-    font-size: 1.8rem; /* Menor título em telas pequenas */
+    font-size: 1.8rem;
   }
 
   .informacoes-cadastradas h2,
@@ -140,11 +156,16 @@
   .atividades-feitas h2,
   .motivacao h2,
   .metas h2 {
-    font-size: 1.2rem; /* Ajustando o tamanho do título das seções */
+    font-size: 1.2rem;
   }
 
   .trocar-dados button {
-    width: 100%; /* Botão ocupa toda a largura em telas pequenas */
+    width: 100%;
     padding: 10px;
+  }
+
+  .conquistas li {
+    flex-direction: column; /* Coloca a imagem e o texto em coluna em telas menores */
+    align-items: center;
   }
 }
