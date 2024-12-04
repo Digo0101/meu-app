@@ -31,7 +31,9 @@ function ApoioUsuario() {
       <section className="contato">
         <h2>Entre em Contato</h2>
         <p>Precisa de mais ajuda? Estamos aqui para você.</p>
-        <button>Enviar Mensagem</button>
+        <Link to="/entreemcontato" className="contact-link">
+          <button>Enviar Mensagem</button>
+        </Link>
       </section>
     </div>
   );
