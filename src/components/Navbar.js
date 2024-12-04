@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Importando o useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
   const [submenuOpen, setSubmenuOpen] = useState(false);
-  const submenuRef = useRef(null); // Referência para o submenu
-  const navigate = useNavigate(); // Inicializando o useNavigate
+  const submenuRef = useRef(null);
+  const navigate = useNavigate();
 
-  // Função para alternar o submenu
   const handleMouseEnter = () => {
     setSubmenuOpen(true);
   };
@@ -21,9 +20,9 @@ function Navbar() {
       const rect = submenuRef.current.getBoundingClientRect();
       if (rect.right > window.innerWidth) {
         submenuRef.current.style.left = 'auto';
-        submenuRef.current.style.right = '0'; // Reposiciona para evitar sair da tela
+        submenuRef.current.style.right = '0';
       } else {
-        submenuRef.current.style.left = ''; // Remove ajustes anteriores
+        submenuRef.current.style.left = '';
         submenuRef.current.style.right = '';
       }
     }

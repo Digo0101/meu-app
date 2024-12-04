@@ -18,7 +18,7 @@ body {
   background-color: #f0f0f0;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000; /* Garante que a navbar esteja acima do conteúdo */
-  padding: 0 20px; /* Espaçamento interno da navbar */
+  padding: 0 0 0 40px; /* Espaçamento interno da navbar */
 }
 
 /* Espaçamento do conteúdo abaixo da navbar */
@@ -81,4 +81,12 @@ body {
 
 .submenu:hover .submenu-dropdown {
   display: flex; /* Exibe o dropdown ao passar o mouse */
+}
+
+/* Remove qualquer símbolo de verificação ou ícone de links e elementos da navbar */
+.navbar-links li a::before,
+.navbar-links li a::after,
+.submenu-dropdown li a::before,
+.submenu-dropdown li a::after {
+  content: none; /* Remove qualquer conteúdo de pseudo-elementos */
 }
