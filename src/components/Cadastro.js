@@ -79,7 +79,8 @@ function Cadastro() {
             alert('Erro ao fazer login: ' + error.message);
           } else {
             console.log('Login realizado com sucesso:', data);
-            navigate('/meu-perfil'); // Redireciona para a página do perfil
+            // Redireciona para a página Home após o login bem-sucedido
+            navigate('/home'); // Verifique se a rota /home está corretamente definida
           }
 
           // Limpar o formulário após sucesso
@@ -108,6 +109,7 @@ function Cadastro() {
     <div className="cadastro-container">
       <h2>Cadastro</h2>
       <form onSubmit={handleSubmit}>
+        {/* Campos de input com erros e validação */}
         <div className="input-group">
           <input
             type="text"

@@ -30,10 +30,9 @@ function App() {
         <div className="App">
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Cadastro />} />
             <Route path="/atividade" element={<Atividades />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/exercicios" element={<Exercicios />} />
             <Route path="/gamificacao" element={<Gamificacao />} />
@@ -48,6 +47,7 @@ function App() {
             <Route path="/comoatualizardados" element={<ComoAtualizarDados />} />
             <Route path="/entreemcontato" element={<EntreEmContato/>}/>
             <Route path="/comovisualizarconquistas" element={<ComoVisualizarConquistas />} />
+            <Route path="/home" element={<Home/>}/>
           </Routes>
         </div>
       </Router>
