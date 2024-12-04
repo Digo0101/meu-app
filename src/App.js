@@ -2,8 +2,9 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
+import Atividades from './components/Atividades';
 import Login from './components/Login';
-import Cadastro from './components/Cadastro'; 
+import Cadastro from './components/Cadastro';
 import Receitas from './components/Receitas';
 import Sobre from './components/Sobre';
 import Gamificacao from './components/Gamificacao';
@@ -13,15 +14,13 @@ import MeuPerfil from './components/MeuPerfil';
 import ApoioUsuario from './components/ApoioUsuario';
 import ReceitaDetalhada from './components/ReceitaDetalhada';
 import ExercicioDetalhado from './components/ExercicioDetalhado';
-import Home from './components/Home'
+import Home from './components/Home';
 import ComoTrocarSenha from './components/ComoTrocarSenha';
 import TrocarSenha from './components/TrocarSenha';
 import ComoAtualizarDados from './components/ComoAtualizarDados';
 import ComoVisualizarConquistas from './components/ComoVisualizarConquistas';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { RecompensasProvider } from './context/RecompensasContext';
-
-
 
 function App() {
   return (
@@ -30,7 +29,8 @@ function App() {
         <div className="App">
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home/>}/>
+            <Route path="/" element={<Home />} />
+            <Route path="/atividade" element={<Atividades />} />
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/sobre" element={<Sobre />} />
@@ -41,11 +41,11 @@ function App() {
             <Route path="/apoio-usuario" element={<ApoioUsuario />} />
             <Route path="/receitas" element={<Receitas />} />
             <Route path="/receitas/:id" element={<ReceitaDetalhada />} />
-            <Route path="/exercicio/:id" element={<ExercicioDetalhado/>}/>
-            <Route path="/como-trocar-senha" element={<ComoTrocarSenha />} /> {}
-            <Route  path="/trocar-senha" element={<TrocarSenha />} />
-            <Route path="/comoatualizardados" element={<ComoAtualizarDados />} />
-            <Route path="/comovisualizarconquistas" element={<ComoVisualizarConquistas />} />
+            <Route path="/exercicio/:id" element={<ExercicioDetalhado />} />
+            <Route path="/como-trocar-senha" element={<ComoTrocarSenha />} />
+            <Route path="/trocar-senha" element={<TrocarSenha />} />
+            <Route path="/como-atualizar-dados" element={<ComoAtualizarDados />} />
+            <Route path="/como-visualizar-conquistas" element={<ComoVisualizarConquistas />} />
           </Routes>
         </div>
       </Router>
@@ -54,4 +54,3 @@ function App() {
 }
 
 export default App;
-

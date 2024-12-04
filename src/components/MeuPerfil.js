@@ -1,25 +1,88 @@
 import React, { useState, useEffect } from 'react';
 import { useRecompensas } from '../context/RecompensasContext';
+import  supabase  from '../supabaseClient'; // Importando o cliente Supabase
 import './MeuPerfil.css';
 
 function MeuPerfil() {
-  const [email, setEmail] = useState('seuemail@exemplo.com');
+  const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [atividades, setAtividades] = useState([]);
-  const { recompensas } = useRecompensas(); // Obtenha as recompensas do contexto
+  const [fotoPerfil, setFotoPerfil] = useState('');
+  const { recompensas } = useRecompensas();
 
-  // Carrega atividades registradas do localStorage
+  // Carrega as informações do usuário e atividades do Supabase
   useEffect(() => {
-    const atividadesRegistradas = JSON.parse(localStorage.getItem('atividadesRegistradas')) || [];
-    setAtividades(atividadesRegistradas);
+    const fetchUserData = async () => {
+      const { data: { user }, error: userError } = await supabase.auth.getUser();
+
+      if (userError) {
+        console.error('Erro ao buscar usuário:', userError);
+        return;
+      }
+
+      if (user) {
+        // Busca dados do perfil do usuário
+        const { data, error } = await supabase
+          .from('usuarios')
+          .select('email, foto_perfil')
+          .eq('id', user.id)
+          .single();
+        
+        if (error) {
+          console.error('Erro ao buscar dados do usuário:', error);
+        } else {
+          setEmail(data.email);
+          setFotoPerfil(data.foto_perfil);
+        }
+
+        // Busca atividades registradas
+        const { data: atividadesData, error: atividadesError } = await supabase
+          .from('atividades')
+          .select('*')
+          .eq('usuario_id', user.id);
+
+        if (atividadesError) {
+          console.error('Erro ao buscar atividades:', atividadesError);
+        } else {
+          setAtividades(atividadesData);
+        }
+      }
+    };
+
+    fetchUserData();
   }, []);
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handleSenhaChange = (e) => setSenha(e.target.value);
 
-  const handleSaveChanges = () => {
-    // Simula a ação de salvar as alterações no perfil
-    alert('Alterações salvas com sucesso!');
+  const handleSaveChanges = async () => {
+    try {
+      const { data: { user }, error: userError } = await supabase.auth.getUser();
+
+      if (userError) {
+        console.error('Erro ao obter usuário:', userError);
+        alert('Erro ao obter usuário.');
+        return;
+      }
+
+      if (user) {
+        // Atualiza as informações de email e senha do usuário
+        const { error } = await supabase
+          .from('usuarios')
+          .update({ email, senha })
+          .eq('id', user.id);
+
+        if (error) {
+          console.error('Erro ao salvar alterações:', error);
+          alert('Erro ao salvar alterações.');
+        } else {
+          alert('Alterações salvas com sucesso!');
+        }
+      }
+    } catch (error) {
+      console.error('Erro inesperado:', error);
+      alert('Erro inesperado ao salvar alterações.');
+    }
   };
 
   return (
@@ -28,7 +91,11 @@ function MeuPerfil() {
       
       {/* Foto de Perfil */}
       <div className="foto-perfil">
-        <img src="caminho/para/foto.jpg" alt="Foto do usuário" />
+        {fotoPerfil ? (
+          <img src={fotoPerfil} alt="Foto do usuário" />
+        ) : (
+          <p>Foto de perfil não definida.</p>
+        )}
       </div>
 
       {/* Dados Cadastrados */}

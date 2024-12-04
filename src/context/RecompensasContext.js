@@ -1,27 +1,21 @@
-// src/context/RecompensasContext.js
-import React, { createContext, useState } from 'react';
-import { useContext } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 
-// Criação do contexto
-export const RecompensaContext = createContext();
+const RecompensasContext = createContext();
 
-// Provider para envolver o App
-export function RecompensasProvider({ children }) {
+export const useRecompensas = () => {
+  return useContext(RecompensasContext);
+};
+
+export const RecompensasProvider = ({ children }) => {
   const [recompensas, setRecompensas] = useState([]);
 
-  // Função para adicionar uma recompensa
   const adicionarRecompensa = (novaRecompensa) => {
     setRecompensas([...recompensas, novaRecompensa]);
   };
 
   return (
-    <RecompensaContext.Provider value={{ recompensas, adicionarRecompensa }}>
+    <RecompensasContext.Provider value={{ recompensas, adicionarRecompensa }}>
       {children}
-    </RecompensaContext.Provider>
+    </RecompensasContext.Provider>
   );
-}
-
-// Hook para acessar o contexto
-export function useRecompensas() {
-  return useContext(RecompensaContext);
-}
+};
